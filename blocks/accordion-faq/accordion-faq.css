@@ -1,0 +1,65 @@
+/* Accordion FAQ - WKND Trendsetters */
+.accordion-faq details {
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.accordion-faq details + details {
+  margin-top: var(--spacing-m);
+}
+
+.accordion-faq details p {
+  margin-bottom: 0.8em;
+}
+
+.accordion-faq details summary {
+  position: relative;
+  padding: var(--spacing-l) var(--spacing-xl);
+  padding-right: 56px;
+  cursor: pointer;
+  list-style: none;
+  overflow: auto;
+  font-weight: 600;
+  font-size: var(--body-font-size-m);
+  transition: background-color 0.2s;
+}
+
+.accordion-faq details[open] summary {
+  background-color: var(--light-color);
+}
+
+.accordion-faq details summary:focus,
+.accordion-faq details summary:hover {
+  background-color: var(--light-color);
+}
+
+.accordion-faq details summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-faq details summary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%) rotate(135deg);
+  width: 8px;
+  height: 8px;
+  border: 2px solid;
+  border-width: 2px 2px 0 0;
+  transition: transform 0.2s;
+}
+
+.accordion-faq details[open] summary::after {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.accordion-faq details .accordion-faq-item-body {
+  padding: 0 var(--spacing-xl) var(--spacing-l);
+}
+
+.accordion-faq details[open] .accordion-faq-item-body {
+  border-top: 1px solid #e8e8e8;
+  background-color: var(--background-color);
+}

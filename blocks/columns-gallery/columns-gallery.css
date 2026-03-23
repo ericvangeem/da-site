@@ -1,0 +1,25 @@
+/* Columns Gallery - WKND Trendsetters */
+.columns-gallery > div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-s);
+}
+
+.columns-gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+.columns-gallery p {
+  margin: 0;
+}
+
+@media (width >= 900px) {
+  .columns-gallery > div {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-s);
+  }
+}

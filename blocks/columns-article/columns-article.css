@@ -1,0 +1,42 @@
+/* Columns Article - WKND Trendsetters */
+.columns-article > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-l);
+}
+
+.columns-article > div > div {
+  order: 1;
+}
+
+.columns-article > div > .columns-article-img-col {
+  order: 0;
+}
+
+.columns-article img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+}
+
+.columns-article p {
+  margin-top: var(--spacing-s);
+}
+
+.columns-article h2 {
+  margin-top: var(--spacing-m);
+}
+
+@media (width >= 900px) {
+  .columns-article > div {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-xxl);
+  }
+
+  .columns-article > div > div {
+    flex: 1;
+    order: unset;
+  }
+}

@@ -1,42 +1,56 @@
 /*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * WKND Trendsetters - Design System
+ * Migrated from https://wknd-trendsetters.site/
  */
 
 :root {
   /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --background-color: #fff;
+  --light-color: #f5f5f5;
+  --dark-color: #000;
+  --text-color: #000;
+  --text-color-secondary: #666;
+  --link-color: #000;
+  --link-hover-color: #000;
+  --accent-color: #f4fe8b;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: "Instrument Sans", instrument-sans-fallback, sans-serif;
+  --heading-font-family: Syncopate, syncopate-fallback, sans-serif;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  --body-font-size-m: 18px;
+  --body-font-size-s: 16px;
+  --body-font-size-xs: 14px;
+  --body-font-size-xxs: 12px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  --heading-font-size-xxl: 40px;
+  --heading-font-size-xl: 32px;
+  --heading-font-size-l: 24px;
+  --heading-font-size-m: 20px;
+  --heading-font-size-s: 16px;
+  --heading-font-size-xs: 14px;
 
-  /* nav heights */
+  /* spacing */
+  --section-padding: 80px 0;
+  --container-max-width: 1200px;
+  --container-padding: 0 24px;
+  --spacing-xs: 8px;
+  --spacing-s: 12px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  /* buttons */
+  --button-border-radius: 9999px;
+  --button-padding: 12px 24px;
+  --button-font-size: 14px;
+  --button-font-weight: 600;
+  --button-transition: transform 0.15s, box-shadow 0.15s;
+
+  /* nav */
   --nav-height: 64px;
   --breadcrumbs-height: 34px;
   --header-height: var(--nav-height);
@@ -44,31 +58,25 @@
 
 /* fallback fonts */
 @font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
+  font-family: instrument-sans-fallback;
+  size-adjust: 100%;
   src: local('Arial');
 }
 
 @font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
+  font-family: syncopate-fallback;
+  size-adjust: 95%;
+  src: local('Arial Narrow'), local('Helvetica Condensed'), local('Arial');
 }
 
 @media (width >= 900px) {
   :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
+    --heading-font-size-xxl: 48px;
     --heading-font-size-xl: 36px;
     --heading-font-size-l: 28px;
     --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
+    --heading-font-size-s: 18px;
+    --heading-font-size-xs: 14px;
   }
 }
 
@@ -78,7 +86,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-s);
   line-height: 1.6;
 }
 
@@ -112,17 +120,31 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  margin-top: 0;
+  margin-bottom: 0;
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+  letter-spacing: -0.8px;
+}
+
+h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+h3 {
+  font-size: var(--heading-font-size-xs);
+  letter-spacing: 0.7px;
+  color: var(--text-color-secondary);
+  margin-bottom: var(--spacing-s);
+}
+
 h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
@@ -133,8 +155,8 @@ ol,
 ul,
 pre,
 blockquote {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  margin-top: var(--spacing-l);
+  margin-bottom: 0;
 }
 
 code,
@@ -143,7 +165,7 @@ pre {
 }
 
 pre {
-  padding: 16px;
+  padding: var(--spacing-m);
   border-radius: 8px;
   background-color: var(--light-color);
   overflow-x: auto;
@@ -173,48 +195,66 @@ a:hover {
   text-decoration: underline;
 }
 
-/* buttons */
+/* buttons - primary (dark) */
 a.button:any-link,
 button {
   box-sizing: border-box;
   display: inline-block;
   max-width: 100%;
-  margin: 12px 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  margin: var(--spacing-s) 0;
+  border: 2px solid var(--dark-color);
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding);
   font-family: var(--body-font-family);
   font-style: normal;
-  font-weight: 500;
+  font-weight: var(--button-font-weight);
+  font-size: var(--button-font-size);
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
+  background-color: var(--dark-color);
   color: var(--background-color);
   cursor: pointer;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: var(--button-transition);
 }
 
 a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: var(--dark-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0 0 0 / 25%);
   cursor: pointer;
 }
 
 button:disabled,
 button:disabled:hover {
   background-color: var(--light-color);
+  border-color: var(--light-color);
   cursor: unset;
+  transform: none;
+  box-shadow: none;
 }
 
+/* buttons - secondary (outline) */
 a.button.secondary,
 button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
+  background-color: var(--background-color);
+  border: 2px solid var(--dark-color);
   color: var(--text-color);
+}
+
+a.button.secondary:hover,
+a.button.secondary:focus,
+button.secondary:hover,
+button.secondary:focus {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0 0 0 / 15%);
 }
 
 main img {
@@ -236,13 +276,14 @@ main img {
 
 /* sections */
 main > .section {
-  margin: 40px 0;
+  margin: 0;
+  padding: var(--section-padding);
 }
 
 main > .section > div {
-  max-width: 1200px;
+  max-width: var(--container-max-width);
   margin: auto;
-  padding: 0 24px;
+  padding: var(--container-padding);
 }
 
 main > .section:first-of-type {
@@ -255,10 +296,30 @@ main > .section:first-of-type {
   }
 }
 
-/* section metadata */
+/* section metadata - light */
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
-  margin: 0;
-  padding: 40px 0;
+}
+
+/* section metadata - dark (inverse) */
+main .section.dark {
+  background-color: var(--dark-color);
+  color: var(--background-color);
+}
+
+main .section.dark a:any-link {
+  color: var(--background-color);
+}
+
+main .section.dark a.button:any-link {
+  background-color: var(--background-color);
+  border-color: var(--background-color);
+  color: var(--dark-color);
+}
+
+main .section.dark a.button.secondary {
+  background-color: transparent;
+  border-color: var(--background-color);
+  color: var(--background-color);
 }

@@ -1,0 +1,91 @@
+/* Tabs Testimonial - WKND Trendsetters */
+.tabs-testimonial .tabs-testimonial-list {
+  display: flex;
+  gap: var(--spacing-s);
+  max-width: 100%;
+  overflow-x: auto;
+  padding-bottom: var(--spacing-m);
+}
+
+.tabs-testimonial .tabs-testimonial-list button {
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--dark-color);
+  border-radius: 16px;
+  padding: var(--spacing-m);
+  background-color: var(--light-color);
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: var(--body-font-size-xs);
+  line-height: 1.4;
+  text-align: left;
+  text-overflow: unset;
+  overflow: unset;
+  white-space: unset;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  min-width: 180px;
+}
+
+.tabs-testimonial .tabs-testimonial-list button p {
+  margin: 0;
+}
+
+.tabs-testimonial .tabs-testimonial-list button strong {
+  display: block;
+  font-size: var(--body-font-size-xs);
+}
+
+.tabs-testimonial .tabs-testimonial-list button[aria-selected='true'] {
+  background-color: var(--dark-color);
+  color: var(--background-color);
+  border-color: var(--dark-color);
+}
+
+.tabs-testimonial .tabs-testimonial-list button:hover {
+  background-color: var(--dark-color);
+  color: var(--background-color);
+}
+
+.tabs-testimonial .tabs-testimonial-panel {
+  margin-top: var(--spacing-l);
+  padding: 0;
+  border: none;
+  overflow: auto;
+}
+
+.tabs-testimonial .tabs-testimonial-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs-testimonial .tabs-testimonial-panel > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-l);
+  align-items: center;
+}
+
+.tabs-testimonial .tabs-testimonial-panel picture {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.tabs-testimonial .tabs-testimonial-panel img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+@media (width >= 900px) {
+  .tabs-testimonial .tabs-testimonial-panel > div {
+    flex-direction: row;
+    gap: var(--spacing-xxl);
+  }
+
+  .tabs-testimonial .tabs-testimonial-panel img {
+    max-width: 500px;
+    aspect-ratio: 4 / 3;
+  }
+}

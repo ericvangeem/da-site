@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-cta",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-03-13T03:16:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.site/",
+    "originPage": "homepage CTA banner section",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "cta-banner",
+    "imagePattern": "background-image-overlay"
+  },
+  "contentPattern": {
+    "structure": "background image + heading + subheading + 1 CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "full-width CTA banners with background images",
+      "dark overlay hero sections",
+      "promotional banner sections"
+    ],
+    "notSuitableFor": [
+      "light background heroes",
+      "heroes without background images",
+      "multi-image layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-13T03:16:00.000Z"
+  }
+}
